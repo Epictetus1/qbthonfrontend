@@ -1,0 +1,53 @@
+
+<mat-toolbar  style ="background:blue">
+    
+    <mat-toolbar-row>
+        <a  class ="gap" [routerLink]="'/EventsdayAdmin'" mat-button>EventDAy</a>
+        
+    <a class ="gap" [routerLink]="'/triggermail'" mat-button>TriggerMails</a>
+    <a class = "gap" [routerLink]="'/dashboard'"mat-button> Dashboard</a>
+    <a class ="endicon" [routerLink]="'/logoff'" mat-button> signOut</a>
+    </mat-toolbar-row>
+
+
+</mat-toolbar>
+<br>
+<br>
+<br>
+<div class ="container">
+    <div class ="row">
+        <div class ="col">
+    <button  (click)="displayscreen()" class="button btn btn-primary">Create Events</button>    
+</div>
+
+<div class ="col">
+<div [hidden]="!displayCreateEvent">
+    <form [formGroup]="eventCreationForm" >
+        <div style="border:1px solid black">
+        
+        <table>
+            <tr >
+            <td><label for="username">Date of event</label></td>
+            <td><input type="text" formControlName="eventDate" class="form-control"  ></td>
+            
+        </tr>
+        <tr >
+            <td><label for="skills">Skills</label></td>
+            <td><input type="text" formControlName="skills" class="form-control" ></td>
+            
+           </tr>
+        <tr >
+    
+            <td>  <div class="form-group"><button  class="button btn btn-primary">create</button></div></td>
+    
+            </tr>
+    
+            
+        </table>
+    </div>    
+    </form>
+    </div>
+    </div>
+    
+
+</div>
