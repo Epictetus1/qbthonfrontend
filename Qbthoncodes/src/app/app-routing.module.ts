@@ -10,6 +10,9 @@ import {EventsdayuserComponent} from '../app/eventsdayuser/eventsdayuser.compone
 import {UsernpminationComponent} from '../app/usernpmination/usernpmination.component';
 import {PractisemcqComponent} from '../app/practisemcq/practisemcq.component';
 import{EventsdaysmeComponent} from '../app/eventsdaysme/eventsdaysme.component';
+import {ReportsComponent} from '../app/reports/reports.component';
+import { EventsInfoComponent } from './user/events-info/events-info.component';
+import {DisplaypractisequestionsComponent} from '../app/displaypractisequestions/displaypractisequestions.component';
 
 const routes: Routes = [{ path: 'login', component: LoginComponent },
 {path: '', component: LoginComponent},{ path: 'admin', component: AdminpageComponent },
@@ -20,7 +23,10 @@ const routes: Routes = [{ path: 'login', component: LoginComponent },
 {path:'sme', component:SmeComponent},
 {path: 'EventsdayUser' ,component:EventsdayuserComponent},
 {path: 'practiseMCQ', component:PractisemcqComponent},
-{path: 'nominate', component:UsernpminationComponent}
+{path: 'eventsInfo', component:EventsInfoComponent},
+{path: 'nominate', component:UsernpminationComponent},
+{path: 'displaypractiseMcq', component:DisplaypractisequestionsComponent},
+{path: 'getreports',component:ReportsComponent }
 ]
 
 @NgModule({

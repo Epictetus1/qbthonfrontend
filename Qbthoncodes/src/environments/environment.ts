@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   loginserviceurl :'http://localhost:8086/login/',
-  skillsurl: 'http://localhost:8086/getskills'
+  skillsurl: 'http://localhost:8086/getskills',
+  reportsurl: 'http://localhost:8087/getEventQuestionNumbers',
+  practiseMcqURL: 'http://localhost:8070/submittopic/'
 };
 
 /*

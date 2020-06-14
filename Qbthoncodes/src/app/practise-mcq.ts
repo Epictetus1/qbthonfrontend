@@ -1,4 +1,4 @@
-export interface Multiplechoicequestion {
+export class PractiseMcq {
     skills : string;
     taxonomy: string;
     difficultylevel:string;
@@ -19,8 +19,4 @@ export interface Multiplechoicequestion {
     option5correct:string;
     submitter:string;
     comments:string;
-    
-    
-    
-
 }

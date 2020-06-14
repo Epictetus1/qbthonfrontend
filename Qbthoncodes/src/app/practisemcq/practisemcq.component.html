@@ -144,7 +144,7 @@
           <div fxFlex="0 1 calc(15% - 32px)">
             <label><b>CorrectAnswer?</b></label>
             <br>
-            <select class ="select-class" name="choice4" id="choice4">
+            <select class ="select-class" name="choice4" id="choice4" [(ngModel)]="mcq.option4correct">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
                 
@@ -158,13 +158,13 @@
     <div fxFlex="0 1 calc(15% - 32px)">
         <label><b>Option5(optional)</b></label>
         <br>
-        <textarea class ="select-class" style="width:300px"></textarea>
+        <textarea class ="select-class" style="width:300px" [(ngModel)]="mcq.option5"></textarea>
       </div>
 
       <div fxFlex="0 1 calc(15% - 32px)">
         <label><b>CorrectAnswer?</b></label>
         <br>
-        <select class ="select-class" name="choice3" id="choice3">
+        <select class ="select-class" name="choice5" id="choice5" [(ngModel)]="mcq.option5correct">
             <option value="Yes">Yes</option>
             <option value="No">No</option>
             
@@ -174,21 +174,16 @@
         <br>
         <br>
         <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
-            <div fxFlex="0 1 calc(15% - 32px)"> 
-                <button  class="button btn btn-primary">Submit</button>
+            <div fxFlex="0 1 calc(25% - 32px)"> 
+                <button  class="button btn btn-primary" (click)= "submitMcq()">Submit</button>
                 </div> 
-                <div fxFlex="0 1 calc(15% - 32px)"> 
-                    <button  class="button btn btn-primary">Clear</button>
+                <div fxFlex="0 1 calc(25% - 32px)"> 
+                    <button  class="button btn btn-primary" (click) = "clear()">Clear</button>
                     </div> 
-                    <div fxFlex="0 1 calc(15% - 32px)"> 
-                        <button  class="button btn btn-primary">Cancel</button>
+                    <div fxFlex="0 1 calc(25% - 32px)"> 
+                        <button  class="button btn btn-primary" (click)="cancel()">Cancel</button>
                         </div> 
-                        <div fxFlex="0 1 calc(15% - 32px)"> 
-                            <button  class="button btn btn-primary">Download Template </button>
-                            </div> 
-                            <div fxFlex="0 1 calc(15% - 32px)"> 
-                                <button  class="button btn btn-primary">Upload Template</button>
-                                </div> 
+                        
 
 
 </div>

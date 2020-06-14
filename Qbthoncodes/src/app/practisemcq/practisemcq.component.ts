@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class PractisemcqComponent implements OnInit {
  url:string;
  token:string;
+ http:HttpClient;
  istaxonomyselected:boolean =false;
  mcq :Multiplechoicequestion={
   skills : "",
@@ -31,11 +32,15 @@ export class PractisemcqComponent implements OnInit {
   option4:"",
   option4correct:"",
   option5:"",
-  option5correct:""
+  option5correct:"",
+ 
+    submitter:"",
+    comments:""
  };
  skills:Array<String>=[];
   constructor(http: HttpClient) {
     this.url = environment.skillsurl;
+    this.http = http;
     this.token = "Bearer "+localStorage.getItem('authtoken');
   console.log(this.token);
     const  headers = new  HttpHeaders().set("Accept", "application/json").set("Authorization",this.token);
@@ -61,6 +66,45 @@ export class PractisemcqComponent implements OnInit {
     else{
       this.istaxonomyselected=  false;
     }
+  }
+
+  clear() : void{
+    this.mcq.skills = "",
+    this.mcq.taxonomy ="";
+    this.mcq.topic="";
+    this.mcq.questiontext="";
+    this.mcq.questionsource="";
+    this.mcq.Multipleanswers="";
+    this.mcq.classification="";
+    this.mcq.difficultylevel="";
+    this.mcq.option1="";
+    this.mcq.option1correct="";
+    this.mcq.option2="";
+    this.mcq.option2correct="";
+    this.mcq.option3="";
+    this.mcq.option3correct="";
+    this.mcq.option4="";
+    this.mcq.option4correct="";
+    this.mcq.option5="";
+    this.mcq.option5correct="";
+    
+  }
+
+  submitMcq() : void {
+    const  headers = new  HttpHeaders().set("Accept", "application/json");
+    this.url = environment.practiseMcqURL;
+    this.url = this.url+"userpractise"+"/";
+   this.mcq.submitter = localStorage.getItem('curruser');
+    this.http.post<any>(this.url,this.mcq,{headers}).subscribe(data => {
+     
+     console.log("question submitted");
+      },error =>{console.log("error")});
+    
+
+
+  }
+  cancel(): void {
+
   }
 
 }

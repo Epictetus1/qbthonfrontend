@@ -12,18 +12,30 @@
 
 
 </mat-toolbar>
+<br>
+<br>
 
 <div>
     <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
         <div fxFlex="0 1 calc(25% - 32px)">
             <label><b>Pull reports by</b></label>
-          <select  class ="select-class" name="skills" id="skills">
+          <select  class ="select-class" name="skills" id="skills" [(ngModel)] ="reportType" (change) ='populateChart()'>
               <option value="Question status">Question Status</option>
                     <option value="Events">Events </option>
       
               <option value="Skills">Skills</option>
              
             </select>
+      </div>
+      <div fxFlex="0 1 calc(25% - 32px)" >
+        <google-chart #chart
+        [title]="reportType"
+        [type]="charttype"
+        [data]="chartdata"
+        [options]="options"
+        [width]="500"
+        [height]="400">
+     </google-chart>
       </div>
       
 </div>
